@@ -18,7 +18,7 @@ app = Celery('celeryTest',include=['celeryTest.tasks'])
 app.config_from_object('django.conf:settings', namespace='CELERY')
 
 app.conf.beat_schedule = {
-    'every-15-second': {
+    'every-1-minute': {
         'task': 'celeryTest.tasks.say_hello',
         'schedule': crontab(),
 #        'args': (,)
