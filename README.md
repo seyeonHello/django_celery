@@ -12,3 +12,8 @@
 
 
 #### 1+2. ```celery -A celeryTest worker --beat --loglevel=info```
+<hr>
+
+#### Implement dynamic adding periodic tasks
+##### 1. ``` celery -A celeryTest beat -l info --scheduler django_celery_beat.schedulers:DatabaseScheduler ```
+##### 2. ``` celery -A celeryTest worker --loglevel=info -n worker1 ```
